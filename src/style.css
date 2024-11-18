@@ -1,0 +1,118 @@
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  box-sizing: 0;
+}
+
+#layout {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100dvh;
+  background-image: url(../media/img/hexagon_black_bg.jpg);
+}
+
+header{
+    background-color: #111111;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+#content {
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-areas:
+    "location0 location90"
+    "location0 location180"
+    "location0 location270";
+}
+
+#location0,
+.locationMini {
+  background-color: rgb(90, 0, 90);
+  margin: 20px;
+  border-radius: 10px;
+  color: white;
+  box-shadow: 5px 5px 10px #111111;
+  .locationLabel {
+    grid-area: title;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 40px;
+  }
+}
+
+#location0 {
+  grid-area: location0;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 2fr 1fr;
+  grid-template-areas: 
+  "image image" 
+  "title widget";
+  
+}
+#imgSkyWeather{
+    grid-area: image;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px 10px 0px 0px;
+    box-shadow: 0px -10px 5px rgba(62, 62, 62, 0.382) inset;
+    background-size: cover;
+}
+.day_sunny{
+    background-image: url(../media/img/weather/day_sunny.jpg);
+}
+
+.weatherWidget {
+    grid-area: widget;
+  padding: 20px;
+    display: flex;
+}
+
+.locationMini {
+  padding: 20px;
+  display: flex;
+}
+.weatherWidgetMini {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-around;
+}
+.weatherIconMini{
+    flex-grow: 2;
+}
+.timeDigitsMini,
+.temperatureDigitsMini{
+    flex-grow: 1;
+}
+
+#location90 {
+  grid-area: location90;
+}
+#location180 {
+  grid-area: location180;
+}
+#location270 {
+  grid-area: location270;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    background-color: #111111;
+    color: rgb(131, 44, 144);
+    a{
+        padding-inline: 5px;
+        color: white;
+    }
+}
