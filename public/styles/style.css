@@ -78,6 +78,7 @@ header{
 }
 .locationMini:hover,
 #location0:hover{
+  background-color: #333333cc;
 }
 
 #location0 {
