@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Radial Weather</title>
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+  <body>
+    <div id="videoWrapper">
+      <video autoplay muted loop id="backgroundVideo">
+        <source src="./images/video/Earth_rotation.mp4" type="video/mp4" />
+      </video>
+      <script>
+        document.getElementById("backgroundVideo").playbackRate = 0.3;
+      </script>
+    </div>
+
+    <div id="layout">
+      <header>
+        <h1><span>R@dial</span> Weather</h1>
+      </header>
+
+      <div id="content">
+        <section id="location0" class="locationBox">
+          <div id="imgSkyWeather" src="#" class="day_clear_sky"></div>
+          <div class="locationLabel">
+            <h2>City</h2>
+            <h3><img src="#" alt="flag" />Country</h3>
+          </div>
+          <div class="weatherWidget">
+            <img class="weatherIcon" src="#" alt="weather icon" />
+            <span>Temperature</span>
+          </div>
+        </section>
+
+        <section id="location90" class="locationMini">
+          <div class="locationLabel">
+            <h3>City</h3>
+          </div>
+          <div class="weatherWidgetMini">
+            <img class="weatherIconMini" src="#" alt="weather icon" />
+            <span class="temperatureDigitsMini">Temperature</span>
+            <span class="timeDigitsMini">Time</span>
+          </div>
+        </section>
+
+        <section id="location180" class="locationMini">
+          <div class="locationLabel">
+            <h3>City</h3>
+          </div>
+          <div class="weatherWidgetMini">
+            <img class="weatherIconMini" src="#" alt="weather icon" />
+            <span class="temperatureDigitsMini">Temperature</span>
+            <span class="timeDigitsMini">Time</span>
+          </div>
+        </section>
+
+        <section id="location270" class="locationMini">
+          <div class="locationLabel">
+            <h3>City</h3>
+          </div>
+          <div class="weatherWidgetMini">
+            <img class="weatherIconMini" src="#" alt="weather icon" />
+            <span class="temperatureDigitsMini">Temperature</span>
+            <span class="timeDigitsMini">Time</span>
+          </div>
+        </section>
+      </div>
+
+      <footer>
+        <span> Website created by </span>
+        <a href="https://github.com/Asthere0n"> Cristian Sánchez</a>
+      </footer>
+    </div>
+    <script type="module" src="../src/app.js"></script>
+  </body>
+</html>
