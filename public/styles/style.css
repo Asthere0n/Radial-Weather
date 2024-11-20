@@ -4,8 +4,8 @@
 }
 
 :root {
-  --color_day: #333333c0;
-  --color_night: #151515;
+  --color_lightgrey: #333333cc;
+  --color_dark: #111111cc;
   
 }
 
@@ -33,9 +33,12 @@
   height: 100dvh;
   overflow: hidden;
   position: absolute;
+  z-index: -2;
+  background-color: black;
 }
 #backgroundVideo{
-  width: 100%;
+  height: 100vh;
+  aspect-ratio: 16/9;
   z-index: -1;
 }
 
@@ -61,11 +64,11 @@ header{
 
 #location0,
 .locationMini {
-  background-color: #111111cc;
+  background-color: var(--color_dark);
   margin: 20px;
   border-radius: 10px;
   color: white;
-  box-shadow: 5px 5px 10px #111111;
+  box-shadow: 5px 5px 5px black;
   backdrop-filter: blur(3px);
   .locationLabel {
     grid-area: title;
@@ -78,7 +81,7 @@ header{
 }
 .locationMini:hover,
 #location0:hover{
-  background-color: #333333cc;
+  background-color: var(--color_lightgrey);
 }
 
 #location0 {
@@ -96,7 +99,7 @@ header{
     width: 100%;
     height: 100%;
     border-radius: 10px 10px 0px 0px;
-    box-shadow: 0px -10px 5px inset var(--color_day);
+    box-shadow: 0px -10px 5px inset var(--color_dark);
     background-size: cover;
 }
 .day_clear_sky{
@@ -141,7 +144,7 @@ footer{
     display: flex;
     justify-content: center;
     padding: 5px;
-    background-color: #111111;
+    background-image: linear-gradient(to top, black, rgba(0, 0, 0, 0.607));
     color: rgb(131, 44, 144);
     a{
         padding-inline: 5px;
