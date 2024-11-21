@@ -49,6 +49,9 @@ header{
     display: flex;
     justify-content: center;
     font-family: Nasalization;
+    h1{
+      font-size: 28px;
+    }
 }
 
 #content {
@@ -129,6 +132,12 @@ header{
 .temperatureDigitsMini{
     flex-grow: 1;
 }
+.temperatureDigits,
+.temperatureDigitsMini,
+.timeDigitsMini,
+.timeDigits{
+  font-family: Nasalization;
+}
 
 #location90 {
   grid-area: location90;
@@ -145,9 +154,15 @@ footer{
     justify-content: center;
     padding: 5px;
     background-image: linear-gradient(to top, black, rgba(0, 0, 0, 0.607));
+    font-family: Nasalization;
     color: rgb(131, 44, 144);
     a{
         padding-inline: 5px;
         color: white;
+        transition: scale 0.3s;
+        margin-inline: 5px;
+    }
+    a:hover{
+      scale: 1.1;
     }
 }
