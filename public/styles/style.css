@@ -113,6 +113,11 @@ header{
     grid-area: widget;
   padding: 20px;
     display: flex;
+    flex-direction: column;
+}
+.weatherIcon{
+  width: 80px;
+  height: 80px;
 }
 
 .locationMini {
