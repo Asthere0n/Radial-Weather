@@ -1,29 +1,31 @@
-import { getLocation } from "./api/fetch_Geolocation.js";
+import { getLocation, currentLocation } from "./api/fetch_Geolocation.js";
 import { location0LocalTime } from "./components/HTML_address.js";
 import { getWeather } from "./api/fetch_Weather.js";
 
-let currentLocation = {};
-let currentTime
-let currentWeather;
-
-async function fetchingData() {
-  await getLocation()
-    .then((data) => {
-      currentLocation.latitude = data.position.coords.latitude;
-      currentLocation.longitude = data.position.coords.longitude;
-
-      currentTime = new Date(data.position.timestamp);
-      location0LocalTime.innerHTML = `${currentTime.getHours()}:${currentTime.getMinutes()}`;
-    })
-    .then(() => {
-      currentWeather = getWeather(currentLocation);
-    })
-    .then(() => {
-      console.log("completed");
-      console.log(currentLocation);
-      console.log(currentWeather);
-    });
-  //.catch((error) => console.error(error));
+// Recovers your current coordenates from the Geolocation API
+async function fetchLocation() {
+  const positionObject = await getLocation()
+  currentLocation.latitude = positionObject.coords.latitude
+  currentLocation.longitude = positionObject.coords.longitude
+  //currentLocation.time = positionObject.timestamp
 }
 
-fetchingData();
+// Sends your current coordenates to recover the weather
+async function fetchWeather(location) {
+  const weatherObject = await getWeather(location)
+  currentLocation.currentWeather = weatherObject.current.weather[0].main
+  currentLocation.weatherDescription = weatherObject.current.weather[0].description
+  currentLocation.time = weatherObject.current.dt
+  currentLocation.sunrise = weatherObject.current.sunrise
+  currentLocation.sunset = weatherObject.current.sunset
+  //console.log(weatherObject)
+}
+
+async function initializeApp() {
+  await fetchLocation()
+  await fetchWeather(currentLocation)
+  console.log(currentLocation)
+}
+
+initializeApp()
+
